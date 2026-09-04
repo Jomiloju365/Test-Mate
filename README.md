@@ -1,4 +1,4 @@
-📚 Test Mate
+#📚 Test Mate
 
 Test Mate is a simple student-focused web app designed to help students understand their academic performance and plan their study time more effectively.
 
