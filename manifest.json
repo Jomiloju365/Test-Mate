@@ -1,0 +1,22 @@
+{
+  "name": "Test Mate",
+  "short_name": "Test Mate",
+  "description": "A smart study planner and grade analysis tool for students.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0000ff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

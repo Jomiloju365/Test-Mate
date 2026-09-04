@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Mate</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0000ff">
+</head>
+<body>
+<h1>Test Mate</h1>
+<h2 id="fullName"></h2>
+<h2 id="studyHours"></h2>
+<h2 id="totalScore"></h2>
+<h2 id="percentage"></h2>
+
+
+<div id="subjectsDisplay">
+  
+</div>
+
+<div id="guideDisplay">
+  
+</div>
+
+
+  <script src="display.js"></script>
+ <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./service-worker.js")
+        .then(() => console.log("Service Worker registered!"))
+        .catch((error) => console.error("Service Worker registration failed:", error));
+    });
+  }
+</script>
+</body>
+</html>
+
