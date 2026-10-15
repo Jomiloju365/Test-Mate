@@ -9,8 +9,14 @@ const subjectForm = document.getElementById("subjectForm")
 const analyzeForm = document.getElementById("analyzeForm")
 
 
+/*document.addEventListener("DOMContentLoaded",() => {
+  let data = localStorage.getItem("stats")
+  if (data != "") {
+    window.location.href = "displayPage.html"
+  }
+})*/
 
-//Dialog opening function
+
 function openDialog() {
   dialog.showModal()
 }
