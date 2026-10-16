@@ -8,7 +8,6 @@ const display = document.getElementById("display")
 const subjectForm = document.getElementById("subjectForm")
 const analyzeForm = document.getElementById("analyzeForm")
 
-
 //Dialog opening function
 function openDialog() {
   dialog.showModal()
@@ -28,15 +27,16 @@ function saveSubject(event) {
 
   let subjectName = document.getElementById("subjectName")
   let subjectGrade = document.getElementById("subjectGrade")
-  
-  if (Number(subjectGrade) > 100) {
-    subjectGrade = 100
+
+  let grade = Number(subjectGrade.value)
+  if (grade > 100) {
+    grade  = 100
   }
 
   subjects.push({
     id: Date.now(),
     subjectName: subjectName.value,
-    subjectGrade: subjectGrade.value,
+    subjectGrade: grade,
     rank: "",
   })
 
@@ -69,8 +69,9 @@ function renderSubjects() {
 
 
 
-export function deleteSubject(index) {
+ function deleteSubject(index) {
 
+   subjects.splice(index, 1)
   localStorage.setItem("subjects", JSON.stringify(subjects))
 
   window.location.reload()
@@ -123,7 +124,7 @@ function rankSubjects() {
   renderSubjects()
 }
 
-export function analyze(event) {
+function analyze(event) {
   event.preventDefault()
   localStorage.setItem("subjects", JSON.stringify(subjects))
  const fullName = document.getElementById("fullNameInput").value
