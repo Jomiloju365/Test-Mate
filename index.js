@@ -72,6 +72,7 @@ function renderSubjects() {
  function deleteSubject(index) {
 
    subjects.splice(index, 1)
+   subjects.splice(index,1)
   localStorage.setItem("subjects", JSON.stringify(subjects))
 
   window.location.reload()
