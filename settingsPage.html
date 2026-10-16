@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings</title>
+  <link rel="stylesheet" href="settingsPage.css">
+</head>
+<body>
+  <h1>Test Mate Settings</h1>
+  <button id="settingsSaveBtn">Save Settings</button>
+  
+  <div id="records">
+    <label>
+      Full Name:
+      <input id="fullNameSetting" type="text">
+    </label>
+      
+    <label>
+      Preferred Daily Study Hours:
+      <input type="number" id="studyHoursSetting" min="3">
+    </label>
+  </div>
+  <button id="addSubjectBtn" onclick="openAddDialog()">Add Subject</button>
+  
+  <div id="subjectSettingsList">
+  </div>
+  
+  <dialog id="subjectAddDialog">
+    <form id="subjectAddForm">
+      <label>
+        Subject:
+        <input type="text" id="subjectName" placeholder="Enter Subject Name" required>
+      </label>
+      
+      <label>
+        Grade:
+        <input type="number" id="subjectGrade" placeholder="Enter Subject Grade" required>
+      </label>
+      
+      <button id="submitBtn" type="addSubmitBtn">OK</button>
+      <button id="addCancelBtn" type="button">X</button>
+    </form>
+  </dialog>
+  
+  <dialog id="deleteConformation">
+    <h1>❌Are you sure you want to delete</h1>
+    <h2>This Cannot be undone</h2>
+    
+    <button id="cancelDelete">Cancel</button>
+    <button id="finalDelete">Delete</button>
+  </dialog>
+  
+  <script src="settingsPage.js"></script>
+</body>
+</html>
