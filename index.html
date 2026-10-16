@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0000ff">
-    <script>
+  <script>
     function init() {
       let data = localStorage.getItem("stats")
       if (data != null) {
@@ -15,7 +15,7 @@
       }
     }
     init()
-    </script>
+  </script>
 </head>
 <body>
   <h1>Test Mate</h1>
@@ -51,13 +51,14 @@
   <input type="number" id="studyHoursInput" placeholder="Number of study hours" required 
   min="3"
   step="0.5"
-  oninvalid="this.setCustomValidity('More study time, more progress! Aim for at least 3 hours. 🔥 📚')"
+  max="12"
+oninvalid="this.setCustomValidity(this.validity.rangeOverflow ? 'That is a lot of grind! Stay at 12 hours or below, your brain needs breaks. 🧠☕' : 'More study time, more progress! Aim for at least 3 hours. 🔥 ')"
     oninput="this.setCustomValidity('')"
 />
   
   <button type="submit" id="analyzeBtn">Analyze</button>
 </form>
-<script src="index.js"></script>
+<script type="module" src="index.js"></script>
 <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
