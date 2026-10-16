@@ -9,14 +9,7 @@ const subjectForm = document.getElementById("subjectForm")
 const analyzeForm = document.getElementById("analyzeForm")
 
 
-/*document.addEventListener("DOMContentLoaded",() => {
-  let data = localStorage.getItem("stats")
-  if (data != "") {
-    window.location.href = "displayPage.html"
-  }
-})*/
-
-
+//Dialog opening function
 function openDialog() {
   dialog.showModal()
 }
@@ -59,25 +52,24 @@ renderSubjects()
 
 //subject rendering function
 function renderSubjects() {
-display.innerHTML = ""
+  display.innerHTML = ""
   for (let i = 0; i < subjects.length; i++) {
     const subject = subjects[i]
     const subjectBoard = document.createElement("div")
     subjectBoard.classList = "board"
-
+    
     subjectBoard.innerHTML = `
       <p>${subject.subjectName} - ${subject.subjectGrade} - ${subject.rank}</p>
       <button onclick="deleteSubject(${i})">Delete</button>
     `
-
+    
     display.appendChild(subjectBoard)
   }
 }
 
 
 
-function deleteSubject(index) {
-  subjects.splice(index, 1)
+export function deleteSubject(index) {
 
   localStorage.setItem("subjects", JSON.stringify(subjects))
 
@@ -131,7 +123,7 @@ function rankSubjects() {
   renderSubjects()
 }
 
-function analyze(event) {
+export function analyze(event) {
   event.preventDefault()
   localStorage.setItem("subjects", JSON.stringify(subjects))
  const fullName = document.getElementById("fullNameInput").value
