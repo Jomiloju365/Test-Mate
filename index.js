@@ -86,7 +86,10 @@ subjectForm.addEventListener("submit", saveSubject)
 //Calculations
 const analyzeBtn = document.getElementById("analyzeBtn")
 
-function totalScore() {
+
+
+function analyze(event) {
+  function totalScore() {
   let totalScore = JSON.parse(subjects[0].subjectGrade)
   for (var i = 1; i < subjects.length; i++){
     totalScore = totalScore + JSON.parse(subjects[i].subjectGrade)
@@ -124,7 +127,7 @@ function rankSubjects() {
   renderSubjects()
 }
 
-function analyze(event) {
+
   event.preventDefault()
   localStorage.setItem("subjects", JSON.stringify(subjects))
  const fullName = document.getElementById("fullNameInput").value
