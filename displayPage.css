@@ -1,0 +1,339 @@
+/* ==========================================
+   TEST MATE — DASHBOARD
+   Theme: Midnight Blue
+========================================== */
+
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --card-hover: #263449;
+  --border: #334155;
+
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-light: #60a5fa;
+
+  --text: #f1f5f9;
+  --text-muted: #cbd5e1;
+
+  --green: #84cc16;
+  --yellow: #facc15;
+  --red: #f87171;
+
+  --radius: 20px;
+  --transition: 0.2s ease;
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 28px 18px 50px;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+
+  min-height: 100vh;
+}
+
+/* ==========================================
+   MAIN HEADING
+========================================== */
+
+body > h1 {
+  margin: 12px 0 28px;
+
+  color: var(--primary-light);
+  text-align: center;
+
+  font-size: clamp(32px, 7vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* ==========================================
+   SETTINGS BUTTON
+========================================== */
+
+.settingsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: fit-content;
+  min-height: 46px;
+  margin: 0 auto 28px;
+  padding: 10px 18px;
+
+  background: var(--card);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.settingsBtn:hover {
+  background: var(--card-hover);
+  border-color: var(--primary);
+}
+
+.settingsBtn:active {
+  transform: scale(0.97);
+}
+
+.settingsBtn:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   DASHBOARD SUMMARY CARDS
+
+   These target the four h2 elements
+   directly inside the body.
+========================================== */
+
+#fullName,
+#studyHours,
+#totalScore,
+#percentage {
+  margin: 0 0 16px;
+  padding: 22px 24px;
+
+  background: var(--card);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  font-size: clamp(19px, 4.5vw, 25px);
+  font-weight: 750;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+
+  box-shadow: 0 5px 15px #00000012;
+}
+
+/* Name */
+
+#fullName {
+  margin-top: 8px;
+  margin-bottom: 24px;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  color: var(--text);
+  text-align: center;
+
+  font-size: clamp(24px, 5.5vw, 32px);
+  font-weight: 800;
+}
+
+/* Study hours */
+
+#studyHours {
+  border-left: 5px solid var(--primary);
+}
+
+/* Total score */
+
+#totalScore {
+  border-left: 5px solid var(--primary-light);
+}
+
+/* Average percentage */
+
+#percentage {
+  border-left: 5px solid #818cf8;
+}
+
+/* ==========================================
+   SUBJECTS SECTION
+========================================== */
+
+#subjectsDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin-top: 22px;
+  margin-bottom: 36px;
+}
+
+/* Subject cards */
+
+#subjectsDisplay > div {
+  padding: 20px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius);
+
+  overflow-wrap: anywhere;
+
+  box-shadow: 0 6px 18px #00000012;
+
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+#subjectsDisplay > div:hover {
+  background: var(--card-hover);
+}
+
+/* Subject text */
+
+#subjectsDisplay p {
+  margin: 0;
+
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   STUDY GUIDE SECTION
+========================================== */
+
+#guideDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  margin-top: 28px;
+}
+
+/* Study guide headings */
+
+#guideDisplay h1,
+#guideDisplay h2,
+#guideDisplay h3 {
+  color: var(--primary-light);
+  line-height: 1.35;
+}
+
+/* Study guide cards */
+
+#guideDisplay > div {
+  padding: 22px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius);
+
+  overflow-wrap: anywhere;
+
+  box-shadow: 0 6px 18px #00000012;
+}
+
+/* Study guide text */
+
+#guideDisplay p {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   GENERAL BUTTONS
+
+   Useful if you add actions to the
+   dashboard later.
+========================================== */
+
+button {
+  min-height: 44px;
+  padding: 11px 18px;
+
+  background: var(--primary);
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================
+   TABLETS AND DESKTOPS
+========================================== */
+
+@media (min-width: 700px) {
+  body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px 28px 60px;
+  }
+
+  #subjectsDisplay > div,
+  #guideDisplay > div {
+    padding: 24px;
+  }
+}
