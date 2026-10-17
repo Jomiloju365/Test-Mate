@@ -35,6 +35,10 @@
         .catch((error) => console.error("Service Worker registration failed:", error));
     });
   }
+   const hadController = !!navigator.serviceWorker.controller;
+navigator.serviceWorker.addEventListener("controllerchange", () => {
+  if (hadController) location.reload();
+});
 </script>
 </body>
 </html>
