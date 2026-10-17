@@ -128,7 +128,7 @@ function rankSubjects() {
   renderSubjects()
 }
 
-
+if(subjects.length > 0){
   event.preventDefault()
   localStorage.setItem("subjects", JSON.stringify(subjects))
  const fullName = document.getElementById("fullNameInput").value
@@ -146,6 +146,9 @@ function rankSubjects() {
   localStorage.setItem("stats", JSON.stringify(stats))
   
   window.location.href = "displayPage.html"
+} else{
+  alert("Add at least one subject")
+}
 }
 
 analyzeForm.addEventListener("submit", analyze)
