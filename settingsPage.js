@@ -131,8 +131,8 @@ function rankSubjects() {
   renderSubjects()
 }
 
-
-  event.preventDefault()
+  if(subjects.length > 0){
+    event.preventDefault()
   localStorage.setItem("subjects", JSON.stringify(subjects))
  const fullName = document.getElementById("fullNameSetting").value
   const studyHours = document.getElementById("studyHoursSetting").value
@@ -149,5 +149,9 @@ function rankSubjects() {
   localStorage.setItem("stats", JSON.stringify(stats))
   
   window.location.href = "displayPage.html"
+  } else{
+    window.location.href = "displayPage.html"
+  }
+
 }
 settingsSaveBtn.addEventListener("click", analyze)
