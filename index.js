@@ -156,7 +156,9 @@ analyzeForm.addEventListener("submit", analyze)
 window.addEventListener("load", () => {
     const splash = document.getElementById("splash-screen");
 
-    if (splash) {
+    if (!splash) return;
+
+    setTimeout(() => {
         splash.remove();
-    }
+    }, 3000);
 });
