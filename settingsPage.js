@@ -3,7 +3,7 @@ const studyTimeSetting = document.getElementById("studyHoursSetting")
 const settingSubjectsDisplay = document.getElementById("subjectSettingsList")
 const deleteConformationDialog= document.getElementById("deleteConformation")
 const addDialog = document.getElementById("subjectAddDialog")
-const addSubmitBtn = document.getElementById("addSubmitBtn")
+consnt.getElementById("addSubmitBtn")
 const addCancelBtn = document.getElementById("addCancelBtn")
 const subjectAddForm = document.getElementById("subjectAddForm")
 const settingsSaveBtn = document.getElementById("settingsSaveBtn")
@@ -155,3 +155,4 @@ function rankSubjects() {
 
 }
 settingsSaveBtn.addEventListener("click", analyze)
+
