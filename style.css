@@ -339,3 +339,44 @@ dialog::backdrop {
 .settingsBtn:hover {
   background: #2563eb;
 }
+#splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #000;
+}
+
+#splash-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+.splash-brand {
+    position: absolute;
+    bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    font-family: Arial, sans-serif;
+}
+
+.splash-brand span {
+    color: #858585;
+    font-size: 14px;
+}
+
+.splash-brand strong {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
