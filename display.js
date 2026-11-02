@@ -93,12 +93,3 @@ displayToPage()
 studyGuide()
 renderGuide()
 
-window.addEventListener("load", () => {
-    const splash = document.getElementById("splash-screen");
-
-    if (!splash) return;
-
-    setTimeout(() => {
-        splash.remove();
-    }, 3000);
-});
