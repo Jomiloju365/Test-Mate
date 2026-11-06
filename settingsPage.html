@@ -6,14 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Settings</title>
   <link rel="stylesheet" href="settingsPage.css">
-  <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <h1>Test Mate Settings</h1>
-  <button id="settingsSaveBtn">Save Settings</button>
+  <form id="settingsForm">
+  <button type="submit" id="settingsSaveBtn">Save Settings</button>
   
   <div id="records">
     <label>
@@ -23,9 +20,10 @@
       
     <label>
       Preferred Daily Study Hours:
-      <input type="number" id="studyHoursSetting" min="3">
+      <input type="number" id="studyHoursSetting" min="1" step="0.5" max="12">
     </label>
   </div>
+  </form>
   <button id="addSubjectBtn" onclick="openAddDialog()">Add Subject</button>
   
   <div id="subjectSettingsList">
@@ -57,18 +55,5 @@
   </dialog>
   
   <script src="settingsPage.js"></script>
-   <script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./service-worker.js")
-        .then(() => console.log("Service Worker registered!"))
-        .catch((error) => console.error("Service Worker registration failed:", error));
-    });
-  }
-   const hadController = !!navigator.serviceWorker.controller;
-navigator.serviceWorker.addEventListener("controllerchange", () => {
-  if (hadController) location.reload();
-});
-   </script>
 </body>
 </html>
